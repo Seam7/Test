@@ -21,3 +21,11 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Todo::class, function(Faker\Generator $faker){
+  return[
+    'task' => $faker->sentence($nbWords = rand(3,6), $variableNbWords = true),
+    'is_done' => rand(0,100) <= 30,
+  ];
+
+});
